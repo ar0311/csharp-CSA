@@ -14,6 +14,7 @@ namespace CSA
         private const uint _DVBCSA_DATA_SIZE = 8;
 
         private CSAKeyStruct _ks;
+        private uint len;
 
         #region block_sbox
         private static readonly byte[] _dvbcsa_block_sbox =
@@ -63,9 +64,9 @@ namespace CSA
         {
             _data = data_in;
 
-            _ks = ks; 
-      
-            
+            _ks = ks;
+
+            _len = len;
 
         }
 
