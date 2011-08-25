@@ -9,10 +9,10 @@ using CSA.Operations;
 namespace CSA
 {
     
-    struct CSABlock
-    {
-        public byte b;
-    }
+    //struct CSABlock
+    //{
+    //    public byte b;
+    //}
 
     //struct CSACw
     //{
@@ -49,13 +49,14 @@ namespace CSA
     {
         public UInt64 cw;
         public UInt64 cws;	/* nibble swapped CW */
-        public byte[] sch = new byte[56]; // need to refactor to use global CSA keybuffsize
+        public byte[] sch; // need to refactor to use global CSA keybuffsize
 
         //private  UInt64 _cw;
 
         // constructor
         public CSAKeyStruct(byte[] cw_in)
         {
+            this.sch = new byte[56];
             this.cw = cw_in.ToUInt64();
             this.cws = ((cw & 0xf0f0f0f0f0f0f0f0) >> 4) | ((cw & 0x0f0f0f0f0f0f0f0f) << 4);  // cw swapped;
             this.sch = Operations.Operations.CSAKeyScheduleBlock(cw_in);
