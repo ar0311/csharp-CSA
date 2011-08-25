@@ -25,18 +25,18 @@ namespace CSA
             
 
         }
-        public byte[] Encrypt(byte[] cw, byte[] data, uint len)
+        public byte[] Encrypt(byte[] cw, byte[] data, int len)
         {
             // bypassed bitwise operation, not sure if it works
             // it seems to set alen to length from start of packet to end of last 8 byte block, leaving residue untouched
             // can probably do it in a more .NET way
             //uint alen = len & unchecked((uint)~0x7);
 
-            uint alen = len;  //TODO: implement length checking, this is only good for 184 byte packets (or multiples of 8 bytes)
+            int alen = len;  //TODO: implement length checking, this is only good for 184 byte packets (or multiples of 8 bytes)
 
             CSAKeyStruct ks = new CSAKeyStruct(cw);
 
-            uint i;
+            int i;
 
             if (len < 8)
                 return data;

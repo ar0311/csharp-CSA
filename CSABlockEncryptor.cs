@@ -14,7 +14,7 @@ namespace CSA
         private const uint _DVBCSA_DATA_SIZE = 8;
 
         private CSAKeyStruct _ks;
-        private uint _len;
+        private int _len;
 
         #region block_sbox
         private static readonly byte[] _dvbcsa_block_sbox =
@@ -60,7 +60,7 @@ namespace CSA
         #endregion
 
         // constructor
-        public CSABlockEncryptor(CSAKeyStruct ks, byte[] data_in, uint len)
+        public CSABlockEncryptor(CSAKeyStruct ks, byte[] data_in, int len)
         {
             _data = data_in;
 
@@ -70,9 +70,9 @@ namespace CSA
 
         }
 
-        public void CSABlockEncrypt(uint startOffset)
+        public void CSABlockEncrypt(int startOffset)
         {
-            uint i = 0;
+            int i = 0;
  
             while (i < _DVBCSA_KEYSBUFF_SIZE)
             {
@@ -99,9 +99,9 @@ namespace CSA
         }
 
 
-        public void CSAXor64 (uint offset)
+        public void CSAXor64 (int offset)
         {
-            uint i;
+            int i;
 
             for (i = 0; i < 8; i++)
                 _data[offset + i] ^= _data[offset + i + _DVBCSA_DATA_SIZE];
