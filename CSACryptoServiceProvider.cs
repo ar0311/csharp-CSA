@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 
 namespace CSA
 {
-    class CSACryptoServiceProvider
+    public class CSACryptoServiceProvider
     {
         // variable defs
         private bool _enableBlock;
