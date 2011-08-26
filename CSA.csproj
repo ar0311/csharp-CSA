@@ -43,6 +43,7 @@
     <Compile Include="CSACryptoServiceProvider.cs" />
     <Compile Include="CSABlockDecryptor.cs" />
     <Compile Include="CSABlockEncryptor.cs" />
+    <Compile Include="CSAStreamEncryptor.cs" />
     <Compile Include="Operations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types.cs" />
