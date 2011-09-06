@@ -67,7 +67,6 @@ namespace CSA
             _ks = ks;
 
             _len = len;
-
         }
 
         public void CSABlockEncrypt(int startOffset)
@@ -94,8 +93,7 @@ namespace CSA
                 _data[startOffset + 0] = L;
 
                 i++;
-            }
-            
+            }         
         }
 
 

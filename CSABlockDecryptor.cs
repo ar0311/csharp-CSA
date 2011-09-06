@@ -67,7 +67,6 @@ namespace CSA
             _ks = ks;
 
             _len = len;
-
         }
 
         public void CSABlockDecrypt(int startOffset)
@@ -95,14 +94,11 @@ namespace CSA
 
                 i--;
             }
-
         }
 
 
         public void CSAXor64(int offset)
         {
-
-            // check this works as it should
             int i;
 
             for (i = 0; i < 8; i++)
